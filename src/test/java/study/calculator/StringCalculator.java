@@ -19,7 +19,9 @@ public class StringCalculator {
         this.numberStack = new LinkedList<>();
         this.operationStack = new LinkedList<>();
 
-        divideAndPush();
+        for(String v : values){
+            discriminateAndPush(v);
+        };
         validate();
     }
 
@@ -27,21 +29,31 @@ public class StringCalculator {
         return str == null || str.isEmpty();
     }
 
-    private void divideAndPush() {
-        Arrays.asList(values).stream().forEach((v) -> {
-            try {
-                numberStack.push(Integer.parseInt(v));
-            } catch (NumberFormatException nfe) {
-                operationStack.push(v);
-            }
-        });
+    private void discriminateAndPush(String v) throws ValidationException {
+        try {
+            numberStack.push(Integer.parseInt(v));
+            validateOrderAfterPushingNumber();
+        } catch (NumberFormatException nfe) {
+            operationStack.push(v);
+            validateOrderAfterPushingOperation();
+        }
     }
 
-    private void validate() throws Exception {
-        if (numberStack.isEmpty())
-            throw new ValueException("피연산자가 존재하지 않습니다.");
-        if (operationStack.isEmpty())
-            throw new ValueException("연산자가 존재하지 않습니다.");
+    private void validateOrderAfterPushingNumber() throws ValidationException {
+        if (numberStack.size() - 1 != operationStack.size())
+            throwValidationException();
+    }
+
+    private void validateOrderAfterPushingOperation() throws ValidationException {
+        if (operationStack.size() != numberStack.size())
+            throwValidationException();
+    }
+
+    private void throwValidationException() throws ValidationException {
+        throw new ValidationException("계산식이 순서가 잘못되었습니다.");
+    }
+
+    private void validate() throws ValidationException {
         if (numberStack.size() - 1 != operationStack.size())
             throw new ValidationException("계산식이 잘못되었습니다.");
     }

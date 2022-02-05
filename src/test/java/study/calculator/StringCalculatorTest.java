@@ -21,7 +21,8 @@ public class StringCalculatorTest {
             "1 + 2,3",
             "3 * 5,15",
             "10 / 5,2",
-            "2 + 3 * 4 / 2,10"
+            "2 + 3 * 4 / 2,10",
+            "5,5"
     })
     @DisplayName("문자열로 들어온 계산식 테스트")
     void execute(String str, int expectedResult) throws Throwable {
@@ -34,9 +35,9 @@ public class StringCalculatorTest {
                 Arguments.of("2 ! 3", OperationNotSupportedException.class, "지원하지않는 operation 입니다."),
                 Arguments.of("2 +", ValidationException.class, "계산식이 잘못되었습니다."),
                 Arguments.of("2 - 3 *", ValidationException.class, "계산식이 잘못되었습니다."),
-                Arguments.of("1", ValueException.class, "연산자가 존재하지 않습니다."),
-                Arguments.of("+", ValueException.class, "피연산자가 존재하지 않습니다."),
-                Arguments.of("", Exception.class, "빈 문자열 입니다.")
+                Arguments.of("", Exception.class, "빈 문자열 입니다."),
+                Arguments.of("+", ValidationException.class, "계산식이 순서가 잘못되었습니다."),
+                Arguments.of("1 1 *", ValidationException.class, "계산식이 순서가 잘못되었습니다.")
         );
     }
 
