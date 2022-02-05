@@ -1,15 +1,14 @@
 package study.calculator;
 
-import jdk.nashorn.internal.runtime.regexp.joni.exception.ValueException;
-
 import javax.naming.OperationNotSupportedException;
 import javax.xml.bind.ValidationException;
-import java.util.*;
+import java.util.Deque;
+import java.util.LinkedList;
 
 public class StringCalculator {
-    private String[] values;
-    private Deque<Integer> numberStack = new LinkedList<>();
-    private Deque<String> operationStack = new LinkedList<>();
+    private final String[] values;
+    private final Deque<Integer> numberStack = new LinkedList<>();
+    private final Deque<String> operationStack = new LinkedList<>();
 
     public StringCalculator(String str) throws Throwable {
         if (isEmpty(str))
@@ -26,7 +25,7 @@ public class StringCalculator {
     private void parse() throws ValidationException {
         for(String v : values){
             discriminateAndPush(v);
-        };
+        }
         validate();
     }
 
