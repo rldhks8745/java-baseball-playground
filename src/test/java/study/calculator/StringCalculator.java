@@ -8,25 +8,26 @@ import java.util.*;
 
 public class StringCalculator {
     private String[] values;
-    private Deque<Integer> numberStack;
-    private Deque<String> operationStack;
+    private Deque<Integer> numberStack = new LinkedList<>();
+    private Deque<String> operationStack = new LinkedList<>();
 
     public StringCalculator(String str) throws Throwable {
         if (isEmpty(str))
             throw new Exception("빈 문자열 입니다.");
 
         this.values = str.split(" ");
-        this.numberStack = new LinkedList<>();
-        this.operationStack = new LinkedList<>();
-
-        for(String v : values){
-            discriminateAndPush(v);
-        };
-        validate();
+        parse();
     }
 
     private boolean isEmpty(String str) {
         return str == null || str.isEmpty();
+    }
+
+    private void parse() throws ValidationException {
+        for(String v : values){
+            discriminateAndPush(v);
+        };
+        validate();
     }
 
     private void discriminateAndPush(String v) throws ValidationException {
