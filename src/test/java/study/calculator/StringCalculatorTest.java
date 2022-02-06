@@ -26,7 +26,7 @@ public class StringCalculatorTest {
     })
     @DisplayName("문자열로 들어온 계산식 테스트")
     void execute(String str, int expectedResult) throws Throwable {
-        assertThat(new StringCalculator(str).calc()).isEqualTo(expectedResult);
+        assertThat(new StringCalculator(str).parse().calc()).isEqualTo(expectedResult);
     }
 
     static Stream<Arguments> exceptionTestParameters() {
@@ -45,7 +45,7 @@ public class StringCalculatorTest {
     @MethodSource("exceptionTestParameters")
     @DisplayName("예외 테스트")
     void executeException(String str, Class<Throwable> expectedExceptionClass, String errorMessage) {
-        Throwable thr = catchThrowable(() -> new StringCalculator(str).calc());
+        Throwable thr = catchThrowable(() -> new StringCalculator(str).parse().calc());
         assertThat(thr).isInstanceOf(expectedExceptionClass)
                 .hasMessageContaining(errorMessage);
     }
