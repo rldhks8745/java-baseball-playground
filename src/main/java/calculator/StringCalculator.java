@@ -1,4 +1,4 @@
-package study.calculator;
+package calculator;
 
 import javax.naming.OperationNotSupportedException;
 import javax.xml.bind.ValidationException;
@@ -10,7 +10,7 @@ public class StringCalculator {
     private final Deque<Integer> numberStack = new LinkedList<>();
     private final Deque<String> operationStack = new LinkedList<>();
 
-    protected class ParsedStringCalculator {
+    public class ParsedStringCalculator {
         private final Deque<Integer> numberStack;
         private final Deque<String> operationStack;
 

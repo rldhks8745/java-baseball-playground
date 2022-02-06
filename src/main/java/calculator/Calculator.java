@@ -1,4 +1,4 @@
-package study.calculator;
+package calculator;
 
 import javax.naming.OperationNotSupportedException;
 
