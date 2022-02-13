@@ -1,7 +1,8 @@
 package calculator;
 
+import exception.ValidationException;
+
 import javax.naming.OperationNotSupportedException;
-import javax.xml.bind.ValidationException;
 import java.util.Deque;
 import java.util.LinkedList;
 
