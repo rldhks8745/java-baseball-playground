@@ -8,10 +8,10 @@ int num
 
 - [  ] 1 ~ 9 숫자범위
   - Ball.validateNumber
-- [  ] 3자릿수
-  - Ball.validateLength
 
 Balls
+- [  ] 3자릿수
+  - Ball.validateLength
 - [  ] 3가지 숫자는 서로 다른 수
   - Balls.hasSameNumber
 
@@ -19,6 +19,10 @@ Balls
 - 같은 수, 같은 자리 : 스트라이크
 - 같은 수, 다른 자리 : 볼
 - 없으면 낫싱
+
+Balls <-> Balls
+Balls <-> Ball
+Ball <-> Ball
 
 1. Ball끼리 비교 Ball.play
 2. Balls끼리 비교 Balls.play
