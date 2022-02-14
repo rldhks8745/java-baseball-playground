@@ -7,7 +7,7 @@ int position,
 BallNumber num
 
 - [  ] 1 ~ 9 숫자범위
-  - Ball.validateNumber
+  - BallNumber.validateNumber
 
 Balls
 - [  ] 3자릿수
