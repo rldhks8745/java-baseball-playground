@@ -24,7 +24,7 @@ Balls <-> Balls
 Balls <-> Ball
 Ball <-> Ball
 
-1. Ball끼리 비교 Ball.play
+1. Ball끼리 비교 Ball.play, 스트라이크, 볼, 낫싱 상태 반환
 2. Balls끼리 비교 Balls.play
 
 
