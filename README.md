@@ -4,7 +4,7 @@
 Ball
 
 int position,
-int num
+BallNum num
 
 - [  ] 1 ~ 9 숫자범위
   - Ball.validateNumber
