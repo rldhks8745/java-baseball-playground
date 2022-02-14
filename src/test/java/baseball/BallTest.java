@@ -4,15 +4,14 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class BallTest {
 
     @Test
-    @DisplayName("숫자범우 1 ~ 9 검증 테스트")
-    void validateNumberTest() {
-        assertThat(new Ball(0, 1).validateNumber()).isTrue();
-        assertThat(new Ball(0, 9).validateNumber()).isTrue();
-        assertThat(new Ball(0, 0).validateNumber()).isFalse();
-        assertThat(new Ball(0, 10).validateNumber()).isFalse();
+    void ballPlayTest() {
+        assertThat(new Ball(0, 1).compare(new Ball(0, 1))).isEqualTo(BallStatus.STIKE);
+        assertThat(new Ball(0, 1).compare(new Ball(1, 1))).isEqualTo(BallStatus.BALL);
+        assertThat(new Ball(0, 1).compare(new Ball(0, 2))).isEqualTo(BallStatus.NOTHING);
     }
 }
