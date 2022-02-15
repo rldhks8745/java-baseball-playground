@@ -6,10 +6,12 @@ public class BallNumber {
     private final int number;
 
     public BallNumber(int number) {
+        if (!validateNumber(number))
+            throw new RuntimeException("숫자의 범위가 1 ~ 9를 넘습니다.");
         this.number = number;
     }
 
-    boolean validateNumber() {
+    public static boolean validateNumber(int number) {
         return number >= 1 && number <= 9;
     }
 
