@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 public class BallTest {
 
     @Test
-    void ballPlayTest() {
+    void compareTest() {
         Ball computer = new Ball(0, 1);
         assertThat(computer.compare(new Ball(1, 1))).isEqualTo(BallStatus.BALL);
         assertThat(computer.compare(new Ball(0, 1))).isEqualTo(BallStatus.STIKE);

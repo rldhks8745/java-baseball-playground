@@ -10,9 +10,6 @@ public class Ball {
     public Ball(int ballPosition, int ballNumber) {
         this.ballPosition = new BallPosition(ballPosition);
         this.ballNumber = new BallNumber(ballNumber);
-
-        if (!this.ballNumber.validateNumber())
-            throw new RuntimeException("숫자의 범위가 1 ~ 9를 넘습니다.");
     }
 
     public BallStatus compare(Ball other) {
