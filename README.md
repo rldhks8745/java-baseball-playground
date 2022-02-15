@@ -3,16 +3,15 @@
 
 Ball
 
-int position,
-BallNumber num
-
-- [  ] 1 ~ 9 숫자범위
-  - BallNumber.validateNumber
+- BallPosition position
+- BallNumber num
+  - [ ✔ ] 1 ~ 9 숫자범위
+    - BallNumber.validateNumber
 
 Balls
-- [  ] 3자릿수
-  - Ball.validateLength
-- [  ] 3가지 숫자는 서로 다른 수
+- [ ✔ ] 3자릿수
+  - Balls.validateLength
+- [ ✔ ] 3가지 숫자는 서로 다른 수
   - Balls.hasSameNumber
 
 ### 같은 수가 같은 자리에 있으면 스트라이크, 다른 자리에 있으면 볼, 같은 수가 전혀 없으면 포볼 또는 낫싱
@@ -24,8 +23,9 @@ Balls <-> Balls
 Balls <-> Ball
 Ball <-> Ball
 
-1. Ball끼리 비교 Ball.play, 스트라이크, 볼, 낫싱 상태 반환
-2. Balls끼리 비교 Balls.play
+1. [ ✔ ] Ball끼리 비교 Ball.compare, 스트라이크, 볼, 낫싱 상태 반환
+2. [ ✔ ] Balls <-> Ball 비교 Balls.compareBallsAndBall
+3. [ ✔ ] Balls끼리 비교 Balls.compareBetweenBalls
 
 
 
