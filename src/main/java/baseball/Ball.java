@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class Ball {
 
-    BallPosition ballPosition;
-    BallNumber ballNumber;
+    private final BallPosition ballPosition;
+    private final BallNumber ballNumber;
 
     public Ball(int ballPosition, int ballNumber) {
         this.ballPosition = new BallPosition(ballPosition);
