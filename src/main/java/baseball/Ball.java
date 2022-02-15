@@ -4,11 +4,11 @@ import java.util.Objects;
 
 public class Ball {
 
-    int position;
+    BallPosition ballPosition;
     BallNumber ballNumber;
 
-    public Ball(int position, int ballNumber) {
-        this.position = position;
+    public Ball(int ballPosition, int ballNumber) {
+        this.ballPosition = new BallPosition(ballPosition);
         this.ballNumber = new BallNumber(ballNumber);
 
         if (!this.ballNumber.validateNumber())
@@ -19,7 +19,7 @@ public class Ball {
         if (this.equals(other))
             return BallStatus.STIKE;
 
-        if (this.ballNumber == other.ballNumber)
+        if (this.ballNumber.equals(other.ballNumber))
             return BallStatus.BALL;
 
         return BallStatus.NOTHING;
@@ -30,11 +30,11 @@ public class Ball {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Ball ball = (Ball) o;
-        return position == ball.position && ballNumber == ball.ballNumber;
+        return Objects.equals(ballPosition, ball.ballPosition) && Objects.equals(ballNumber, ball.ballNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(position, ballNumber);
+        return Objects.hash(ballPosition, ballNumber);
     }
 }

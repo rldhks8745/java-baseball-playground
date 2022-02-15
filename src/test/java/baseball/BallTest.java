@@ -10,8 +10,9 @@ public class BallTest {
 
     @Test
     void ballPlayTest() {
-        assertThat(new Ball(0, 1).compare(new Ball(0, 1))).isEqualTo(BallStatus.STIKE);
-        assertThat(new Ball(0, 1).compare(new Ball(1, 1))).isEqualTo(BallStatus.BALL);
-        assertThat(new Ball(0, 1).compare(new Ball(0, 2))).isEqualTo(BallStatus.NOTHING);
+        Ball computer = new Ball(0, 1);
+        assertThat(computer.compare(new Ball(1, 1))).isEqualTo(BallStatus.BALL);
+        assertThat(computer.compare(new Ball(0, 1))).isEqualTo(BallStatus.STIKE);
+        assertThat(computer.compare(new Ball(0, 2))).isEqualTo(BallStatus.NOTHING);
     }
 }
