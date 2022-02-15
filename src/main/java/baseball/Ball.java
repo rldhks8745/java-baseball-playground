@@ -14,7 +14,7 @@ public class Ball {
 
     public BallStatus compare(Ball other) {
         if (this.equals(other))
-            return BallStatus.STIKE;
+            return BallStatus.STRIKE;
 
         if (this.ballNumber.equals(other.ballNumber))
             return BallStatus.BALL;
