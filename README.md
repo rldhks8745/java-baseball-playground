@@ -13,6 +13,8 @@ Balls
   - Balls.validateLength
 - [ ✔ ] 3가지 숫자는 서로 다른 수
   - Balls.hasSameNumber
+- [ ✔ ] List<Integer> -> List<Ball>
+  - Balls().createBalls
 
 ### 같은 수가 같은 자리에 있으면 스트라이크, 다른 자리에 있으면 볼, 같은 수가 전혀 없으면 포볼 또는 낫싱
 - 같은 수, 같은 자리 : 스트라이크
